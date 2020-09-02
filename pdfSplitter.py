@@ -19,15 +19,15 @@ def splitPDF(filePath, s, e):
         #n_pages = pdfReader.getNumPages()        
         newPath = "{}_{}_{}.pdf".format(basePath,str(s).zfill(3),str(e).zfill(3) )
         with open(newPath,"wb") as f:
+            pdfWriter = PyPDF2.PdfFileWriter()
             for i in range(s,e):
                 try:
                     pageObj = pdfReader.getPage(i)
-                    pdfWriter = PyPDF2.PdfFileWriter()
-                    pdfWriter.addPage(pageObj)
-                    pdfWriter.write(f)
+                    pdfWriter.addPage(pageObj)                    
                 except:
                     logger.info("Coudn't split {}".format(newPath) )
                     continue
+            pdfWriter.write(f)
 
 
 
