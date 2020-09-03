@@ -71,24 +71,21 @@ def main():
                 filesize, n_pages = pdfStats(pdf)
 
                 if mode == 1:
-                    n = int(input('Em quantas partes você quer dividir?'))
+                    n = int(input('Em quantas partes você quer dividir?\n'))
                     if n >= n_pages:
-                        print('Número de partes maior do que o número de páginas. Nada a fazer.')
+                        print('Número de partes maior do que o número de páginas. Nada a fazer.\n')
                     else:                        
-                        if n_pages % n != 0:
-                            n_ranges = n + 1
-                            nPags = n_pages//n
-                            remainder = n_pages % n
+                        if n_pages % n != 0:                            
+                            nPags = n_pages//n                            
                             s = 0
                             e = nPags
                             for i in range(0, n_pages, nPags):
                                 splitPDF(pdf, s, e)
                                 s = e
                                 e = e + nPags
-                            e = e - nPags + remainder
+                            e = n_pages - 1
                             splitPDF(pdf, s, e)                              
-                        else:
-                            n_ranges = n
+                        else:                            
                             nPags = n_pages//n
                             s = 0
                             e = nPags
