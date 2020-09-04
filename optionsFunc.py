@@ -1,0 +1,72 @@
+"""
+Created on Thu Sep  3 21:23:10 2020
+
+@author: Anderson
+"""
+
+from pdfFunc import splitPDF, pdfStats, merger
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logging.disable(logging.CRITICAL)
+logger = logging.getLogger(__name__)
+        
+
+def option1(pdfs):
+    if len(pdfs) <= 1:
+        print('Deve haver pelo menos 2 PDFs no diretório. Nada a fazer.')
+    else:        
+        filename = input('Qual o nome do novo arquivo pdf?\n')
+        for p in pdfs:
+            merger.append(p)
+        merger.write('{}.pdf'.format(filename) )
+        print('PDFs unidos no arquivo {}.pdf'.format(filename) )
+
+def option2(pdfs):
+    if len(pdfs) < 1:
+        print('Não há PDFs no diretório. Nada a fazer.')
+    else:
+        print('PDF(s) no diretório:')
+        for i,p in enumerate(pdfs):
+            print('{} - {}'.format(i+1, p) )
+        pdf = pdfs[int(input('Dividir qual PDF?\n')) - 1]
+        filesize, n_pages = pdfStats(pdf)
+        #tratar exceção de números impossíveis de se dividir
+        n = int(input('Dividir em quantas partes?\n') )
+        if n >= n_pages or n < 1:
+            print('O número de partes deve estar entre 2 e o número de páginas. Nada a fazer.\n')
+        elif n_pages % n != 0:
+            nPags = n_pages//n
+            s = 0
+            e = nPags
+            for i in range(0, (n-1)*nPags, nPags):
+                splitPDF(pdf, s, e)
+                s = e
+                e = e + nPags
+            e = n_pages
+            splitPDF(pdf, s, e)
+        else:                            
+            nPags = n_pages//n
+            s = 0
+            e = nPags
+            for i in range(0, n_pages, nPags):
+                splitPDF(pdf, s, e)
+                s = e
+                e = e + nPags
+
+def option3(pdfs):
+    if len(pdfs) < 1:
+        print('Não há PDFs no diretório. Nada a fazer.')
+    else:
+        print('PDF(s) no diretório:')
+        for i,p in enumerate(pdfs):
+            print('{} - {}'.format(i+1, p) )        
+        pdf = pdfs[int(input('Extrair de qual PDF?\n')) - 1]        
+        filesize, n_pages = pdfStats(pdf)
+    start = int(input('Qual a página inicial?\n')) - 1
+    end = int(input('Qual a página final?\n') )
+    splitPDF(pdf, start, end)
+        
+               
+
+
