@@ -4,14 +4,18 @@ Created on Thu Sep  3 21:23:10 2020
 @author: Anderson
 """
 
+import logging, os, pyfiglet
 from optionsFunc import option1, option2, option3
-import logging, os
+
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logging.disable(logging.CRITICAL)
 logger = logging.getLogger(__name__)
-        
-def main():        
+    
+
+def main():   
+    banner = pyfiglet.figlet_format("PDF Suite 1.0\nAFR 64.15\nabmelo\n", font = "Slant" )
+    print(banner) 
     option = int(input('''Escolha a opção:\n1 - Juntar pdfs\n2 - Dividir pdf\n3 - Extrair Páginas\n''') )
     pdfs = sorted([p.lower() for p in os.listdir() if p.endswith('pdf') ] )
     if option == 1:
@@ -24,7 +28,7 @@ def main():
         print('Opção inválida')   
         
 if __name__ == '__main__':
-    main()    
+    main()
 
 #logger.info("Total runtime: {}".format(time() - ts) )
 
