@@ -6,7 +6,7 @@ block_cipher = None
 a = Analysis(['main.py'],
              pathex=['D:\\Programming\\Python\\Projects\\pdf_suite'],
              binaries=[],
-             datas=[],
+             datas=[('C:\\Anaconda3\\envs\\SEFAZ_ENV\\Lib\\site-packages\\pyfiglet\\fonts', './pyfiglet/fonts')],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
@@ -30,4 +30,4 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=True )
+          console=True , icon='index.ico')

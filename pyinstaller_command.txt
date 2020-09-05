@@ -1,0 +1,1 @@
+pyinstaller -F --add-data 'C:\Anaconda3\envs\SEFAZ_ENV\Lib\site-packages\pyfiglet\fonts;./pyfiglet/fonts' .\main.py -n pdf_suite_1.0_x64.exe

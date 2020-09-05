@@ -30,6 +30,7 @@ def splitPDF(filePath, s, e):
                     logger.info("Coudn't split {}".format(newPath) )
                     continue
             pdfWriter.write(f)
+    return newPath
 
 def pdfStats(pdf):
     with open(pdf,"rb") as fileObj:           

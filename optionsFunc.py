@@ -20,7 +20,7 @@ def option1(pdfs):
         for p in pdfs:
             merger.append(p)
         merger.write('{}.pdf'.format(filename) )
-        print('\nPDFs unidos no arquivo {}.pdf'.format(filename) )
+        print('\nNovo PDF: {}.pdf'.format(filename) )
 
 def option2(pdfs):
     if len(pdfs) < 1:
@@ -40,17 +40,17 @@ def option2(pdfs):
             s = 0
             e = nPags
             for i in range(0, (n-1)*nPags, nPags):
-                splitPDF(pdf, s, e)
+                print('Novo arquivo: {}'.format(splitPDF(pdf, s, e) ) )
                 s = e
                 e = e + nPags
             e = n_pages
-            splitPDF(pdf, s, e)
+            print('Novo arquivo: {}'.format(splitPDF(pdf, s, e) ) )
         else:                            
             nPags = n_pages//n
             s = 0
             e = nPags
             for i in range(0, n_pages, nPags):
-                splitPDF(pdf, s, e)
+                print('Novo arquivo: {}'.format(splitPDF(pdf, s, e) ) )
                 s = e
                 e = e + nPags
 
@@ -65,7 +65,7 @@ def option3(pdfs):
         filesize, n_pages = pdfStats(pdf)
     start = int(input('\nQual a página inicial?\n')) - 1
     end = int(input('\nQual a página final?\n') )
-    splitPDF(pdf, start, end)
+    print('Novo arquivo: {}'.format(splitPDF(pdf, start, end) ) )
         
                
 
