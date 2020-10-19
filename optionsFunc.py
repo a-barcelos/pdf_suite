@@ -7,6 +7,7 @@ Created on Thu Sep  3 21:23:10 2020
 from pdfFunc import splitPDF, pdfStats, merger
 import logging
 
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logging.disable(logging.CRITICAL)
 logger = logging.getLogger(__name__)
@@ -67,6 +68,14 @@ def option3(pdfs):
     end = int(input('\nQual a página final?\n') )
     print('Novo arquivo: {}'.format(splitPDF(pdf, start, end) ) )
         
-               
+def exit_func():
+    op = input('Sair do programa? (S/N)')
+    if op.lower() == 's':
+        return True
+    elif op.lower() == 'n':
+        return False
+    else:
+        print('Opção inválida.')
+        exit_func()
 
 
