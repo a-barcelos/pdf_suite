@@ -7,11 +7,3 @@ PDF Suite manipula arquivos pdf. Possui atualmente as seguintes funcionalidades:
 2 - Divide um pdf do diretório em n partes;
 3 - Extrai um intervalo de páginas do pdf.
 
-Atualmente não foram tratadas as exceções e nem validados os dados inseridos pelo usuário.
-Assim, para funcionar corretamente, o usuário deve se ater a escolher as opções que lhe 
-são apresentadas.
-
-Nos próximos releases as exceções serão tratadas e os inputs serão submetidos a validação.
-
-##############################################################################################
-
