@@ -1,17 +1,17 @@
-#SEFAZ-RJ / AFR 64.15 PDF Suite 1.0
+#SEFAZ-RJ - PDF Suite 1.1
 autor: abmelo@fazenda.rj.gov.br
 
 PDF Suite manipula arquivos pdf. Possui atualmente as seguintes funcionalidades:
 
-1 - Junta os pdfs no diretÛrio onde È executado;
-2 - Divide um pdf do diretÛrio em n partes;
-3 - Extrai um intervalo de p·ginas do pdf.
+1 - Junta os pdfs no diret√≥rio onde √© executado;
+2 - Divide um pdf do diret√≥rio em n partes;
+3 - Extrai um intervalo de p√°ginas do pdf.
 
-Atualmente n„o foram tratadas as exceÁıes e nem validados os dados inseridos pelo usu·rio.
-Assim, para funcionar corretamente, o usu·rio deve se ater a escolher as opÁıes que lhe 
-s„o apresentadas.
+Atualmente n√£o foram tratadas as exce√ß√µes e nem validados os dados inseridos pelo usu√°rio.
+Assim, para funcionar corretamente, o usu√°rio deve se ater a escolher as op√ß√µes que lhe 
+s√£o apresentadas.
 
-Nos prÛximos releases as exceÁıes ser„o tratadas e os inputs ser„o submetidos a validaÁ„o.
+Nos pr√≥ximos releases as exce√ß√µes ser√£o tratadas e os inputs ser√£o submetidos a valida√ß√£o.
 
 ##############################################################################################
 
